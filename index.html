@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penny Emory | Elite Book Marketing & Author Scaling</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display (Serif) & Inter (Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            400: '#D4AF37',
+                            500: '#C5A059',
+                            600: '#A67C1E',
+                        },
+                        midnight: {
+                            900: '#0A0E17',
+                            950: '#05070B',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Premium Scrollbar & Selection */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #05070B; }
+        ::-webkit-scrollbar-thumb { background: #C5A059; border-radius: 4px; }
+        ::selection { background: #C5A059; color: #05070B; }
+        
+        /* Glassmorphism & Glow Effects */
+        .glass { background: rgba(10, 14, 23, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(197, 160, 89, 0.15); }
+        .gold-glow { box-shadow: 0 0 35px rgba(197, 160, 89, 0.15); }
+        .gold-glow-hover:hover { box-shadow: 0 0 45px rgba(197, 160, 89, 0.3); }
+
+        /* Preloader */
+        #preloader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #05070B; z-index: 9999; display: flex;
+            justify-content: center; align-items: center; flex-direction: column;
+            transition: opacity 0.6s ease;
+        }
+        .spinner {
+            width: 60px; height: 60px; border: 3px solid rgba(197, 160, 89, 0.2);
+            border-top-color: #C5A059; border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="bg-midnight-950 text-slate-200 font-sans overflow-x-hidden">
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="spinner mb-4"></div>
+        <h2 class="font-serif tracking-widest text-gold-500 text-lg uppercase">Penny Emory Marketing</h2>
+        <p class="text-xs text-slate-500 tracking-wider mt-1">Elite Author Scaling</p>
+    </div>
+
+    <!-- GLOBAL HEADER NAVIGATION -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass transition-all duration-300 py-4 px-6 md:px-12 flex justify-between items-center">
+        <a href="#" class="flex items-center gap-3 group">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocK69vQMQSNi13ipM8RYz2YU1Gl2_EN9uGPLpYlRkf2k_teDTy8=s288-c-no" alt="Penny Emory" class="w-10 h-10 rounded-full border-2 border-gold-500 object-cover shadow-lg group-hover:scale-105 transition-transform">
+            <div>
+                <span class="font-serif text-lg tracking-wider font-bold text-white block leading-none">Penny Emory</span>
+                <span class="text-[10px] text-gold-400 uppercase tracking-widest block mt-1 font-semibold">Book Specialist Marketer</span>
+            </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center gap-8 text-sm tracking-wider uppercase font-medium">
+            <a href="#dilemma" class="hover:text-gold-400 transition-colors">The Dilemma</a>
+            <a href="#methodology" class="hover:text-gold-400 transition-colors">Methodology</a>
+            <a href="#asynchronous" class="hover:text-gold-400 transition-colors">The Advantage</a>
+            <a href="#services" class="hover:text-gold-400 transition-colors">Architectures</a>
+            <a href="#campaigns" class="hover:text-gold-400 transition-colors">Case Studies</a>
+            <a href="#founder" class="hover:text-gold-400 transition-colors">Meet Penny</a>
+        </div>
+
+        <a href="#intake" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-gold-600 to-gold-400 text-midnight-950 px-6 py-2.5 rounded text-xs uppercase tracking-widest font-bold hover:scale-105 transition-transform shadow-lg shadow-gold-500/20">
+            Client Intake <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </nav>
+
+    <!-- SECTION 1: HERO ARCHITECTURE -->
+    <header class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6 md:px-12 overflow-hidden">
+        <!-- Ambient Background Glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto text-center z-10">
+            <!-- Author Badge -->
+            <div data-aos="fade-down" data-aos-duration="1000" class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-gold-500/30 bg-gold-500/10 backdrop-blur text-gold-400 text-xs tracking-widest uppercase mb-8">
+                <i class="fa-solid fa-gem"></i> Bespoke Commercial Book Scaling
+            </div>
+
+            <h1 data-aos="fade-up" data-aos-duration="1000" class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+                Turning Exceptional Authors into <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-yellow-200 to-gold-500">Commercial Bestsellers.</span>
+            </h1>
+
+            <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200" class="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed mb-12">
+                The publishing landscape is crowded, algorithms are ruthless, and reader attention is scarce. We engineer bespoke, data-driven marketing campaigns that transform literary art into thriving, scalable author careers—with 100% written accountability and zero wasted time.
+            </p>
+
+            <div data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400" class="flex flex-col sm:flex-row items-center justify-center gap-5">
+                <a href="#intake" class="w-full sm:w-auto bg-gradient-to-r from-gold-600 via-gold-500 to-gold-400 text-midnight-950 font-bold px-8 py-4 rounded uppercase text-sm tracking-widest hover:scale-105 transition-all shadow-xl shadow-gold-500/20 flex items-center justify-center gap-3">
+                    Request Custom Marketing Audit <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#services" class="w-full sm:w-auto border border-slate-700 bg-slate-900/60 hover:bg-slate-800 text-slate-300 font-semibold px-8 py-4 rounded uppercase text-sm tracking-widest transition-all flex items-center justify-center gap-3">
+                    Explore Architectures
+                </a>
+            </div>
+
+            <!-- Trust Signals -->
+            <div data-aos="fadeIn" data-aos-delay="600" class="mt-20 pt-10 border-t border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-xs tracking-widest text-slate-400 uppercase">
+                <div><span class="block text-gold-400 text-xl font-serif font-bold mb-1">100%</span> Asynchronous Execution</div>
+                <div><span class="block text-gold-400 text-xl font-serif font-bold mb-1">Advanced</span> Algorithmic Priming</div>
+                <div><span class="block text-gold-400 text-xl font-serif font-bold mb-1">Omnichannel</span> Ad Scaling Suite</div>
+                <div><span class="block text-gold-400 text-xl font-serif font-bold mb-1">Bespoke</span> Career Roadmaps</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 2: THE AUTHOR'S DILEMMA -->
+    <section id="dilemma" class="py-24 px-6 md:px-12 bg-midnight-900 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5" data-aos="fade-right" data-aos-duration="1000">
+                    <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold block mb-3">// The Publishing Paradox</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight mb-6">
+                        Writing a Great Book is Only <span class="italic text-gold-400">10%</span> of the Equation.
+                    </h2>
+                    <p class="text-slate-300 leading-relaxed mb-6 font-light">
+                        Most authors spend months, years, or decades perfecting their craft, only to launch their books into deafening silence. You didn't become an author to spend your days wrestling with advertising dashboards, decoding algorithm updates, or agonizing over promotional graphics.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed font-light">
+                        When marketing fails, it is rarely a flaw in the writing. It is a breakdown in the conversion mechanics.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6" data-aos="fade-left" data-aos-duration="1000">
+                    <!-- Fail Card 1 -->
+                    <div class="bg-slate-950/80 p-8 rounded border border-slate-800 hover:border-gold-500/30 transition-colors">
+                        <div class="w-10 h-10 bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center rounded mb-6 text-lg">
+                            <i class="fa-solid fa-ghost"></i>
+                        </div>
+                        <h3 class="text-white font-serif font-semibold text-lg mb-2">Invisible Metadata</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Books miscategorized with ineffective keywords, failing to capture organic retailer search traffic.</p>
+                    </div>
+
+                    <!-- Fail Card 2 -->
+                    <div class="bg-slate-950/80 p-8 rounded border border-slate-800 hover:border-gold-500/30 transition-colors">
+                        <div class="w-10 h-10 bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center rounded mb-6 text-lg">
+                            <i class="fa-solid fa-filter-circle-xmark"></i>
+                        </div>
+                        <h3 class="text-white font-serif font-semibold text-lg mb-2">Leaky Sales Funnels</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">High promotional traffic, but poor conversion rates due to weak sales copy or misaligned cover aesthetics.</p>
+                    </div>
+
+                    <!-- Fail Card 3 -->
+                    <div class="bg-slate-950/80 p-8 rounded border border-slate-800 hover:border-gold-500/30 transition-colors">
+                        <div class="w-10 h-10 bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center rounded mb-6 text-lg">
+                            <i class="fa-solid fa-chart-line-down"></i>
+                        </div>
+                        <h3 class="text-white font-serif font-semibold text-lg mb-2">Ineffective Advertising</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Running ad campaigns without understanding bid optimization, indexing, or target reader psychographics.</p>
+                    </div>
+
+                    <!-- Fail Card 4 -->
+                    <div class="bg-slate-950/80 p-8 rounded border border-slate-800 hover:border-gold-500/30 transition-colors">
+                        <div class="w-10 h-10 bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center rounded mb-6 text-lg">
+                            <i class="fa-solid fa-hourglass-end"></i>
+                        </div>
+                        <h3 class="text-white font-serif font-semibold text-lg mb-2">The "One-and-Done" Trap</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Focusing entirely on launch day while neglecting the long-tail strategy required to build compounding royalties.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Solution Banner -->
+            <div data-aos="fade-up" class="mt-16 bg-gradient-to-r from-gold-600/10 via-gold-500/20 to-gold-600/10 border border-gold-500/30 p-8 rounded flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h3 class="font-serif text-2xl text-white font-bold mb-2">The Penny Emory Solution</h3>
+                    <p class="text-slate-300 max-w-3xl font-light">We remove the guesswork. We apply rigorous corporate marketing frameworks to the publishing industry, ensuring every campaign is tracked, optimized, and engineered for maximum commercial potential.</p>
+                </div>
+                <a href="#intake" class="bg-gold-500 hover:bg-gold-400 text-midnight-950 font-bold px-8 py-3 rounded text-xs tracking-widest uppercase flex-shrink-0 transition-colors">
+                    Initiate Audit
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: CORE METHODOLOGY -->
+    <section id="methodology" class="py-24 px-6 md:px-12 bg-midnight-950 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold block mb-3">// Proprietary Scaling</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6">The Four Pillars of Commercial Book Scaling</h2>
+                <p class="text-slate-300 font-light">We do not believe in generic marketing blasts or one-size-fits-all promo packages. Every campaign we manage is built upon our proprietary 4-Pillar Scaling Framework.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Pillar 1 -->
+                <div data-aos="fade-up" data-aos-duration="1000" class="p-10 rounded-lg border border-slate-800 bg-slate-900/50 hover:border-gold-500/40 transition-all group gold-glow-hover">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="text-gold-400 font-serif text-4xl font-bold block">I.</span>
+                        <h3 class="font-serif text-2xl text-white font-bold">Conversion Rate Optimization (CRO) & Packaging</h3>
+                    </div>
+                    <p class="text-slate-300 font-light leading-relaxed mb-6">Before initiating promotional outreach, your book’s sales page must be optimized to convert visitors into buyers.</p>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-400 mt-1"></i> <span><strong>Sales Copy Re-engineering:</strong> We craft hook-driven, emotionally resonant book descriptions formatted for readability.</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-400 mt-1"></i> <span><strong>Look-Inside Optimization:</strong> Structuring front matter to ensure readers are captivated within the first three pages.</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-400 mt-1"></i> <span><strong>Metadata & Category Mapping:</strong> Researching underground, high-traffic sub-genres to secure category rankings.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" class="p-10 rounded-lg border border-slate-800 bg-slate-900/50 hover:border-gold-500/40 transition-all group gold-glow-hover">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="text-gold-400 font-serif text-4xl font-bold block">II.</span>
+                        <h3 class="font-serif text-2xl text-white font-bold">Algorithmic Priming & Organic Discovery</h3>
+                    </div>
+                    <p class="text-slate-300 font-light leading-relaxed mb-6">Retailers operate on highly sophisticated search engines. We train them to push your book organically.</p>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-400 mt-1"></i> <span><strong>Keyword Indexing:</strong> Identifying the exact search phrases readers use when looking for your specific genre.</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-400 mt-1"></i> <span><strong>Also-Bought Engineering:</strong> Training retailer recommendation engines to associate your book with top-tier bestselling authors in your niche.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="p-10 rounded-lg border border-slate-800 bg-slate-900/50 hover:border-gold-500/40 transition-all group gold-glow-hover">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="text-gold-400 font-serif text-4xl font-bold block">III.</span>
+                        <h3 class="font-serif text-2xl text-white font-bold">Omnichannel Targeted Acquisition</h3>
+                    </div>
+                    <p class="text-slate-300 font-light leading-relaxed mb-6">We deploy targeted, scalable campaigns across the digital landscape to drive highly qualified reader traffic directly to your books.</p>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-400 mt-1"></i> <span><strong>Retailer Advertising:</strong> Hyper-targeted Sponsored Product campaigns targeting competitor book titles and author names.</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-400 mt-1"></i> <span><strong>Social Advertising (Meta Suite):</strong> Scroll-stopping visual hooks and campaigns targeted to verified avid readers within your genre.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="p-10 rounded-lg border border-slate-800 bg-slate-900/50 hover:border-gold-500/40 transition-all group gold-glow-hover">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="text-gold-400 font-serif text-4xl font-bold block">IV.</span>
+                        <h3 class="font-serif text-2xl text-white font-bold">Lifecycle Marketing & Reader Retention</h3>
+                    </div>
+                    <p class="text-slate-300 font-light leading-relaxed mb-6">Acquiring a reader is good; retaining them for your entire backlist is how author empires are built.</p>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-400 mt-1"></i> <span><strong>Series Sell-Through Optimization:</strong> Structuring back-matter to guarantee readers instantly buy book two after finishing book one.</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-400 mt-1"></i> <span><strong>Reader Magnet Integration:</strong> Building automated email sequences that turn casual readers into loyal superfans who buy every future release.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: THE ASYNCHRONOUS ADVANTAGE -->
+    <section id="asynchronous" class="py-24 px-6 md:px-12 bg-midnight-900 relative">
+        <div class="max-w-5xl mx-auto border border-gold-500/20 bg-slate-950/60 p-10 md:p-16 rounded-xl relative overflow-hidden gold-glow">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+                <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold block mb-3">// The Email-Only Protocol</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6 leading-tight">Flawless Execution. 100% Written Accountability. Zero Wasted Time.</h2>
+                <p class="text-slate-300 font-light">In high-level marketing, time spent sitting in endless meetings is time away from managing your campaigns. We operate on a strict, professional Asynchronous Communication Model. All strategies, updates, inquiries, and deliverables are managed securely and exhaustively via email.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div data-aos="fade-up" data-aos-delay="100" class="p-6 rounded bg-slate-900/50 border border-slate-800">
+                    <div class="text-gold-400 text-3xl mb-4"><i class="fa-solid fa-file-shield"></i></div>
+                    <h3 class="font-serif text-lg text-white font-bold mb-2">Absolute Written Accountability</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">You never have to wonder what was agreed upon. Every strategy, milestone, timeline, and promised deliverable is documented in crystal-clear writing.</p>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="200" class="p-6 rounded bg-slate-900/50 border border-slate-800">
+                    <div class="text-gold-400 text-3xl mb-4"><i class="fa-solid fa-brain"></i></div>
+                    <h3 class="font-serif text-lg text-white font-bold mb-2">Unbroken Deep Work</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Marketing requires deep analytical focus. By eliminating phone calls, our team dedicates 100% of our daily operational bandwidth to analyzing metrics, split-testing copy, and driving your sales.</p>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="300" class="p-6 rounded bg-slate-900/50 border border-slate-800">
+                    <div class="text-gold-400 text-3xl mb-4"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h3 class="font-serif text-lg text-white font-bold mb-2">Data-Rich Reporting</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Rather than vague verbal updates, you receive comprehensive, beautifully formatted milestone reports delivered to your inbox. You review campaign execution on your own schedule.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: BESPOKE MARKETING ARCHITECTURES (SERVICES) -->
+    <section id="services" class="py-24 px-6 md:px-12 bg-midnight-950 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold block mb-3">// Agency Services</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6">Tailored Marketing Architectures for Serious Authors</h2>
+                <p class="text-slate-300 font-light">We do not offer pre-packaged, cookie-cutter pricing. Every book is unique, and every strategy is custom-built based on your current platform, genre competitiveness, and long-term goals. To discuss pricing and scope for your specific book, submit an intake brief.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div data-aos="fade-up" data-aos-duration="1000" class="bg-slate-900/60 border border-slate-800 rounded-xl p-8 flex flex-col justify-between hover:border-gold-500/40 transition-all relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-gold-500 text-midnight-950 font-bold uppercase text-[10px] tracking-widest py-1 px-4 rounded-bl">Launch</div>
+                    <div>
+                        <h3 class="font-serif text-2xl text-white font-bold mb-3 mt-2">Architecture I: The Elite Launch Engine</h3>
+                        <p class="text-gold-400 text-xs tracking-wider uppercase mb-6 font-semibold">Engineered for authors preparing to launch a new release who demand an explosive, commercially viable debut.</p>
+                        
+                        <div class="space-y-4 text-sm text-slate-300 mb-8 pt-6 border-t border-slate-800">
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-gold-500 text-xs"></i> Pre-Launch Market Viability Assessment</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-gold-500 text-xs"></i> Complete Metadata, SEO, & Keyword Overhaul</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-gold-500 text-xs"></i> Advanced Blurb & Back-Cover Copywriting</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-gold-500 text-xs"></i> ARC Strategy & Distribution Management</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-gold-500 text-xs"></i> Launch Week Promotional Stacking Strategy</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-gold-500 text-xs"></i> Day-One Advertising Setup & Algorithm Priming</div>
+                        </div>
+                    </div>
+                    <a href="#intake" class="w-full bg-slate-800 hover:bg-gold-500 hover:text-midnight-950 text-slate-200 font-bold py-3 text-center rounded text-xs uppercase tracking-widest transition-colors block">
+                        Request Proposal
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150" class="bg-slate-900/60 border border-slate-800 rounded-xl p-8 flex flex-col justify-between hover:border-gold-500/40 transition-all relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-gold-500 text-midnight-950 font-bold uppercase text-[10px] tracking-widest py-1 px-4 rounded-bl">Backlist</div>
+                    <div>
+                        <h3 class="font-serif text-2xl text-white font-bold mb-3 mt-2">Architecture II: Backlist Revival & Series Scaling</h3>
+                        <p class="text-gold-400 text-xs tracking-wider uppercase mb-6 font-semibold">Designed for established authors with published catalogs whose sales have plateaued or declined.</p>
+                        
+                        <div class="space-y-4 text-sm text-slate-300 mb-8 pt-6 border-t border-slate-800">
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-gold-500 text-xs"></i> Comprehensive Book Product Page Audit</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-gold-500 text-xs"></i> Series Sell-Through Analysis & Remediation</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-gold-500 text-xs"></i> Repackaging Strategy (Covers & Blurbs)</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-gold-500 text-xs"></i> Strategic Price Promotion Stacking</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-gold-500 text-xs"></i> Re-indexing Campaign for Dormant Algorithms</div>
+                        </div>
+                    </div>
+                    <a href="#intake" class="w-full bg-slate-800 hover:bg-gold-500 hover:text-midnight-950 text-slate-200 font-bold py-3 text-center rounded text-xs uppercase tracking-widest transition-colors block">
+                        Request Proposal
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="bg-slate-900/60 border border-slate-800 rounded-xl p-8 flex flex-col justify-between hover:border-gold-500/40 transition-all relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-gold-500 text-midnight-950 font-bold uppercase text-[10px] tracking-widest py-1 px-4 rounded-bl">Scaling</div>
+                    <div>
+                        <h3 class="font-serif text-2xl text-white font-bold mb-3 mt-2">Architecture III: Ongoing Advertising Scaling Suite</h3>
+                        <p class="text-gold-400 text-xs tracking-wider uppercase mb-6 font-semibold">For career authors seeking continuous customer acquisition managed by a professional media buyer.</p>
+                        
+                        <div class="space-y-4 text-sm text-slate-300 mb-8 pt-6 border-t border-slate-800">
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-gold-500 text-xs"></i> Full-Service Management of Retailer & Social Ads</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-gold-500 text-xs"></i> Continuous A/B Split Testing (Graphics & Hooks)</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-gold-500 text-xs"></i> Daily Bid Optimization & Budget Allocation</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-gold-500 text-xs"></i> Keyword Mining & Scaling Architecture</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-dot text-gold-500 text-xs"></i> Bi-Weekly Executive Reporting on Net ROI</div>
+                        </div>
+                    </div>
+                    <a href="#intake" class="w-full bg-slate-800 hover:bg-gold-500 hover:text-midnight-950 text-slate-200 font-bold py-3 text-center rounded text-xs uppercase tracking-widest transition-colors block">
+                        Request Proposal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEET THE FOUNDER SECTION (PENNY EMORY) -->
+    <section id="founder" class="py-24 px-6 md:px-12 bg-midnight-900 relative">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 relative" data-aos="fade-right">
+                <div class="absolute -top-4 -left-4 w-full h-full border-2 border-gold-500/30 rounded-xl pointer-events-none"></div>
+                <img src="https://lh3.googleusercontent.com/a/ACg8ocK69vQMQSNi13ipM8RYz2YU1Gl2_EN9uGPLpYlRkf2k_teDTy8=s288-c-no" alt="Penny Emory" class="w-full h-[500px] object-cover rounded-xl shadow-2xl relative z-10 filter contrast-105">
+                <!-- Overlay Quote -->
+                <div class="absolute -bottom-6 right-6 z-20 bg-slate-950/90 border border-gold-500/40 p-6 rounded-lg max-w-xs backdrop-blur-md shadow-2xl">
+                    <p class="font-serif italic text-sm text-slate-200 mb-3">"When marketing fails, it is rarely a flaw in the writing. It is a breakdown in the conversion mechanics."</p>
+                    <span class="text-gold-400 font-bold text-xs uppercase tracking-widest block">— Penny Emory</span>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7" data-aos="fade-left">
+                <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold block mb-3">// The Specialist Marketer</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6">Hello, I am Penny Emory.</h2>
+                <p class="text-slate-300 font-light leading-relaxed mb-6 text-lg">
+                    As a dedicated Book Specialist Marketer, my professional mission is bridging the gap between exceptional literary talent and commercial market domination. 
+                </p>
+                <p class="text-slate-300 font-light leading-relaxed mb-8">
+                    I treat publishing as a highly structured corporate enterprise. By eliminating corporate bloat, unnecessary consultation calls, and vanity metrics, I focus 100% of my operational bandwidth directly on your sales funnels, retailer metadata, and paid customer acquisition. Everything is documented, everything is accountable, and everything is geared toward building your long-term royalties.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 pt-8 border-t border-slate-800">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-lg flex-shrink-0">
+                            <i class="fa-solid fa-envelope-circle-check"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-500 uppercase tracking-widest block font-semibold">Direct Email Inquiries</span>
+                            <a href="mailto:pennyemory106@gmail.com" class="text-white hover:text-gold-400 font-medium tracking-wide text-sm transition-colors">pennyemory106@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-lg flex-shrink-0">
+                            <i class="fa-solid fa-square-check"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-500 uppercase tracking-widest block font-semibold">Operational Status</span>
+                            <span class="text-emerald-400 font-medium tracking-wide text-sm">Accepting Intake Briefs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#intake" class="inline-flex items-center gap-3 bg-gold-500 hover:bg-gold-400 text-midnight-950 font-bold px-8 py-4 rounded text-xs uppercase tracking-widest transition-colors shadow-lg">
+                    Partner With Penny <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: FEATURED CAMPAIGNS & CASE STUDIES (TESTIMONIALS) -->
+    <section id="campaigns" class="py-24 px-6 md:px-12 bg-midnight-950 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold block mb-3">// Demonstrated Commercial Success</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6">Featured Authors & Campaigns</h2>
+                <p class="text-slate-300 font-light">Below is an overview of campaign architectures we have successfully deployed across competitive genres, featuring verified author communications and retail integration.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Case Study 1: James Victor -->
+                <div data-aos="fade-up" data-aos-duration="1000" class="bg-slate-900/60 border border-slate-800 rounded-xl p-8 flex flex-col justify-between hover:border-gold-500/40 transition-all relative overflow-hidden group">
+                    <div>
+                        <!-- Author Profile & Book Header -->
+                        <div class="flex items-center gap-6 mb-8 pb-6 border-b border-slate-800">
+                            <a href="https://www.amazon.com/s?k=James+David+Victor" target="_blank" class="flex-shrink-0 block group/pic">
+                                <img src="https://m.media-amazon.com/images/S/amzn-author-media-prod/u3s2ssa4irudks15rt5o8pnfc4._SY600_._SL200_._PQ50_._FMwebp_.jpg" alt="James Victor" class="w-20 h-20 rounded-full object-cover border-2 border-gold-500 group-hover/pic:scale-105 transition-transform shadow-lg">
+                            </a>
+                            <div class="flex-grow">
+                                <h3 class="font-serif text-2xl text-white font-bold mb-1">James Victor</h3>
+                                <a href="mailto:jamesdavidvictor6@gmail.com" class="text-xs text-gold-400 hover:underline tracking-wider font-mono block mb-2"><i class="fa-solid fa-envelope mr-1"></i> jamesdavidvictor6@gmail.com</a>
+                                <span class="inline-block bg-slate-800 text-slate-300 text-[10px] tracking-widest uppercase px-2.5 py-1 rounded">Sci-Fi / Space Opera</span>
+                            </div>
+                            <a href="https://www.amazon.com/s?k=James+David+Victor" target="_blank" class="flex-shrink-0 block group/book">
+                                <img src="https://m.media-amazon.com/images/I/91xkSDS2SdL._SY342_.jpg" alt="James Victor Book" class="w-16 h-24 object-cover rounded border border-slate-700 shadow-md group-hover/book:scale-105 transition-transform">
+                            </a>
+                        </div>
+
+                        <!-- Campaign Details -->
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <span class="text-xs text-slate-500 uppercase tracking-widest block mb-1">Campaign Focus</span>
+                                <p class="text-white font-semibold">Bestseller Launch & Amazon Optimization</p>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 uppercase tracking-widest block mb-1">Demonstrated Result</span>
+                                <p class="text-slate-300 font-light text-sm leading-relaxed">Reached Top 10 in Category, sustained Kindle Unlimited page reads, and dramatically lowered advertising cost-per-click across Amazon Ads.</p>
+                            </div>
+                            <div class="bg-slate-950/80 p-4 rounded border border-slate-800/80 italic text-slate-400 text-sm">
+                                "Working with Penny Emory completely transformed my launch strategy. The asynchronous email model gave me full accountability without wasting my writing hours."
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Amazon Store Action -->
+                    <div class="pt-6 border-t border-slate-800 flex items-center justify-between">
+                        <a href="https://www.amazon.com/s?k=James+David+Victor" target="_blank" class="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-white transition-colors tracking-widest uppercase">
+                            <i class="fa-brands fa-amazon text-gold-400 text-base"></i> View Author on Amazon
+                        </a>
+                        <a href="https://www.amazon.com/s?k=James+David+Victor" target="_blank" class="text-gold-400 hover:text-white transition-colors text-sm">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Case Study 2: Kate Cullen -->
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="bg-slate-900/60 border border-slate-800 rounded-xl p-8 flex flex-col justify-between hover:border-gold-500/40 transition-all relative overflow-hidden group">
+                    <div>
+                        <!-- Author Profile & Book Header -->
+                        <div class="flex items-center gap-6 mb-8 pb-6 border-b border-slate-800">
+                            <a href="https://www.amazon.com/s?k=Kate+Cullen" target="_blank" class="flex-shrink-0 block group/pic">
+                                <img src="https://m.media-amazon.com/images/S/amzn-author-media-prod/7o7uv5f5dq8hgfmfka20vlta47._SY600_._SL200_._PQ50_._FMwebp_.jpg" alt="Kate Cullen" class="w-20 h-20 rounded-full object-cover border-2 border-gold-500 group-hover/pic:scale-105 transition-transform shadow-lg">
+                            </a>
+                            <div class="flex-grow">
+                                <h3 class="font-serif text-2xl text-white font-bold mb-1">Kate Cullen</h3>
+                                <a href="mailto:katecullen473@gmail.com" class="text-xs text-gold-400 hover:underline tracking-wider font-mono block mb-2"><i class="fa-solid fa-envelope mr-1"></i> katecullen473@gmail.com</a>
+                                <span class="inline-block bg-slate-800 text-slate-300 text-[10px] tracking-widest uppercase px-2.5 py-1 rounded">Romance / Women's Fiction</span>
+                            </div>
+                            <a href="https://www.amazon.com/s?k=Kate+Cullen" target="_blank" class="flex-shrink-0 block group/book">
+                                <img src="https://m.media-amazon.com/images/I/71ac1KKZPrL._SY425_.jpg" alt="Kate Cullen Book" class="w-16 h-24 object-cover rounded border border-slate-700 shadow-md group-hover/book:scale-105 transition-transform">
+                            </a>
+                        </div>
+
+                        <!-- Campaign Details -->
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <span class="text-xs text-slate-500 uppercase tracking-widest block mb-1">Campaign Focus</span>
+                                <p class="text-white font-semibold">Backlist Revival & Series Scaling</p>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 uppercase tracking-widest block mb-1">Demonstrated Result</span>
+                                <p class="text-slate-300 font-light text-sm leading-relaxed">Scaled readership rapidly through omnichannel targeting, resulting in a 420% increase in series read-through within 90 days.</p>
+                            </div>
+                            <div class="bg-slate-950/80 p-4 rounded border border-slate-800/80 italic text-slate-400 text-sm">
+                                "My backlist was completely dead before Penny took over. The level of detail in her bi-weekly executive reporting gave me absolute confidence in where my campaign was heading."
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Amazon Store Action -->
+                    <div class="pt-6 border-t border-slate-800 flex items-center justify-between">
+                        <a href="https://www.amazon.com/s?k=Kate+Cullen" target="_blank" class="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-white transition-colors tracking-widest uppercase">
+                            <i class="fa-brands fa-amazon text-gold-400 text-base"></i> View Author on Amazon
+                        </a>
+                        <a href="https://www.amazon.com/s?k=Kate+Cullen" target="_blank" class="text-gold-400 hover:text-white transition-colors text-sm">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: FREQUENTLY ASKED QUESTIONS -->
+    <section class="py-24 px-6 md:px-12 bg-midnight-900 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold block mb-3">// FAQ</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-6" data-aos="fade-up" data-aos-duration="1000">
+                <!-- FAQ 1 -->
+                <div class="bg-slate-950 border border-slate-800 rounded-lg p-6">
+                    <button class="w-full text-left font-serif text-lg font-bold text-white flex justify-between items-center faq-toggle">
+                        <span>How do I get pricing for your marketing services?</span>
+                        <i class="fa-solid fa-plus text-gold-400 text-sm transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden mt-4 text-slate-300 font-light text-sm leading-relaxed border-t border-slate-800 pt-4">
+                        Because we engineer custom campaigns, we do not list standardized prices. To receive pricing, please submit your book details through our Client Intake Portal below. We will review your project and reply via email with a tailored strategy and exact pricing proposal.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-slate-950 border border-slate-800 rounded-lg p-6">
+                    <button class="w-full text-left font-serif text-lg font-bold text-white flex justify-between items-center faq-toggle">
+                        <span>Do you work with both traditional and self-published (indie) authors?</span>
+                        <i class="fa-solid fa-plus text-gold-400 text-sm transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden mt-4 text-slate-300 font-light text-sm leading-relaxed border-t border-slate-800 pt-4">
+                        Yes. We work with independent authors, hybrid authors, and boutique publishing houses across all major distribution platforms including Kindle Unlimited (KU) and Wide distribution models.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-slate-950 border border-slate-800 rounded-lg p-6">
+                    <button class="w-full text-left font-serif text-lg font-bold text-white flex justify-between items-center faq-toggle">
+                        <span>Why don't you offer consultation phone calls?</span>
+                        <i class="fa-solid fa-plus text-gold-400 text-sm transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden mt-4 text-slate-300 font-light text-sm leading-relaxed border-t border-slate-800 pt-4">
+                        We operate an elite, execution-focused agency. Phone calls create workflow friction and lack documentation. By handling all client communication asynchronously via email, we ensure absolute clarity, flawless record-keeping, and maximum dedication of our time to actively scaling your book sales.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-slate-950 border border-slate-800 rounded-lg p-6">
+                    <button class="w-full text-left font-serif text-lg font-bold text-white flex justify-between items-center faq-toggle">
+                        <span>How long does it take to see commercial results?</span>
+                        <i class="fa-solid fa-plus text-gold-400 text-sm transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden mt-4 text-slate-300 font-light text-sm leading-relaxed border-t border-slate-800 pt-4">
+                        While launch campaigns show immediate activity, true algorithmic scaling and optimized advertising campaigns typically require 60 to 90 days of data gathering, split-testing, and optimization to reach peak performance.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: THE STRATEGY INTAKE PORTAL (FORMSPREE ENGINE) -->
+    <section id="intake" class="py-24 px-6 md:px-12 bg-midnight-950 relative">
+        <div class="max-w-5xl mx-auto border border-gold-500/30 bg-slate-900/60 p-8 md:p-16 rounded-2xl relative overflow-hidden gold-glow">
+            <!-- Background Glow -->
+            <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-4 text-left" data-aos="fade-right">
+                    <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold block mb-3">// Conversion Engine</span>
+                    <h2 class="font-serif text-3xl font-bold text-white mb-4">Initiate Your Custom Strategy Review</h2>
+                    <p class="text-slate-300 font-light text-sm leading-relaxed mb-6">
+                        Please complete the intake brief. Penny Emory will personally review your book’s current market positioning, cover aesthetics, sales copy, and competitive landscape.
+                    </p>
+                    <p class="text-slate-300 font-light text-sm leading-relaxed mb-8">
+                        You will receive an exhaustive, customized strategy proposal, scope of work, and pricing details via email within 24 to 48 hours.
+                    </p>
+                    
+                    <div class="flex items-center gap-4 pt-6 border-t border-slate-800">
+                        <img src="https://lh3.googleusercontent.com/a/ACg8ocK69vQMQSNi13ipM8RYz2YU1Gl2_EN9uGPLpYlRkf2k_teDTy8=s288-c-no" alt="Penny Emory" class="w-12 h-12 rounded-full border border-gold-500 object-cover shadow">
+                        <div>
+                            <span class="font-serif font-bold text-white block text-sm">Penny Emory</span>
+                            <span class="text-[10px] text-gold-400 uppercase tracking-widest block">Direct Strategy Reviewer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FORMSPREE FORM -->
+                <div class="lg:col-span-8 bg-slate-950/80 border border-slate-800 p-8 rounded-xl" data-aos="fade-left">
+                    <form action="https://formspree.io/f/mjgldkbo" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gold-400 font-semibold mb-2">Author Name / Pen Name *</label>
+                                <input type="text" name="Author_Name" required class="w-full bg-slate-900 border border-slate-700 focus:border-gold-500 rounded px-4 py-3 text-white text-sm outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gold-400 font-semibold mb-2">Direct Contact Email *</label>
+                                <input type="email" name="Contact_Email" required class="w-full bg-slate-900 border border-slate-700 focus:border-gold-500 rounded px-4 py-3 text-white text-sm outline-none transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gold-400 font-semibold mb-2">Book Title(s) / Series Name *</label>
+                                <input type="text" name="Book_Title" required class="w-full bg-slate-900 border border-slate-700 focus:border-gold-500 rounded px-4 py-3 text-white text-sm outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gold-400 font-semibold mb-2">Primary Genre & Sub-Genre *</label>
+                                <input type="text" name="Genre" required placeholder="e.g. Sci-Fi / Cyberpunk" class="w-full bg-slate-900 border border-slate-700 focus:border-gold-500 rounded px-4 py-3 text-white text-sm outline-none transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gold-400 font-semibold mb-2">Publishing Status</label>
+                                <select name="Publishing_Status" class="w-full bg-slate-900 border border-slate-700 focus:border-gold-500 rounded px-4 py-3 text-white text-sm outline-none transition-colors">
+                                    <option value="Upcoming Release">Upcoming Release</option>
+                                    <option value="Published Backlist">Published Backlist</option>
+                                    <option value="Both">Both (Catalog & New Release)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gold-400 font-semibold mb-2">Distribution Model</label>
+                                <select name="Distribution_Model" class="w-full bg-slate-900 border border-slate-700 focus:border-gold-500 rounded px-4 py-3 text-white text-sm outline-none transition-colors">
+                                    <option value="Kindle Unlimited">Kindle Unlimited (KDP Select)</option>
+                                    <option value="Wide">Wide (Apple, Kobo, Barnes & Noble)</option>
+                                    <option value="Traditional / Hybrid">Traditional / Hybrid</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gold-400 font-semibold mb-2">Link to Current Book Page or Website URL *</label>
+                            <input type="url" name="Book_URL" required placeholder="https://amazon.com/..." class="w-full bg-slate-900 border border-slate-700 focus:border-gold-500 rounded px-4 py-3 text-white text-sm outline-none transition-colors">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gold-400 font-semibold mb-3">Primary Commercial Objective (Select all that apply)</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-300">
+                                <label class="flex items-center gap-3 bg-slate-900/80 p-3 rounded border border-slate-800 cursor-pointer hover:border-gold-500/50 transition-colors">
+                                    <input type="checkbox" name="Objective[]" value="Bestseller Launch" class="accent-gold-500"> Bestseller Launch
+                                </label>
+                                <label class="flex items-center gap-3 bg-slate-900/80 p-3 rounded border border-slate-800 cursor-pointer hover:border-gold-500/50 transition-colors">
+                                    <input type="checkbox" name="Objective[]" value="Revive Stalled Backlist" class="accent-gold-500"> Revive Stalled Backlist
+                                </label>
+                                <label class="flex items-center gap-3 bg-slate-900/80 p-3 rounded border border-slate-800 cursor-pointer hover:border-gold-500/50 transition-colors">
+                                    <input type="checkbox" name="Objective[]" value="Scale Paid Advertising" class="accent-gold-500"> Scale Paid Advertising
+                                </label>
+                                <label class="flex items-center gap-3 bg-slate-900/80 p-3 rounded border border-slate-800 cursor-pointer hover:border-gold-500/50 transition-colors">
+                                    <input type="checkbox" name="Objective[]" value="Complete Re-branding" class="accent-gold-500"> Complete Re-branding
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gold-400 font-semibold mb-2">Previous Marketing Efforts & Strategies Attempted</label>
+                            <textarea name="Previous_Strategies" rows="3" placeholder="Detail any past ad campaigns, promo sites, or newsletter swaps..." class="w-full bg-slate-900 border border-slate-700 focus:border-gold-500 rounded px-4 py-3 text-white text-sm outline-none transition-colors"></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gold-400 font-semibold mb-2">Long-Term Author Career Goals (Next 12–24 Months)</label>
+                            <textarea name="Career_Goals" rows="3" placeholder="Where do you want your monthly royalties and readership to be?" class="w-full bg-slate-900 border border-slate-700 focus:border-gold-500 rounded px-4 py-3 text-white text-sm outline-none transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-gold-600 via-gold-500 to-gold-400 hover:scale-[1.02] text-midnight-950 font-bold py-4 rounded text-xs tracking-widest uppercase transition-all shadow-xl shadow-gold-500/10">
+                            Request Custom Strategy & Pricing Proposal
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-midnight-950 border-t border-slate-800 py-16 px-6 md:px-12 text-sm text-slate-500">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            <div class="flex items-center gap-4">
+                <img src="https://lh3.googleusercontent.com/a/ACg8ocK69vQMQSNi13ipM8RYz2YU1Gl2_EN9uGPLpYlRkf2k_teDTy8=s288-c-no" alt="Penny Emory" class="w-10 h-10 rounded-full border border-gold-500 object-cover">
+                <div>
+                    <span class="font-serif text-base tracking-wider font-bold text-white block">Penny Emory</span>
+                    <span class="text-[10px] text-gold-400 uppercase tracking-widest block font-semibold">Elite Book Marketing</span>
+                </div>
+            </div>
+
+            <div class="max-w-md text-xs leading-relaxed text-slate-400 font-light">
+                To guarantee uncompromising accountability and precision, all agency operations and client communications are documented and executed exclusively via email.
+            </div>
+
+            <div class="text-xs space-y-2">
+                <div class="text-slate-300 font-medium">Direct Inquiries: <a href="mailto:pennyemory106@gmail.com" class="text-gold-400 hover:underline">pennyemory106@gmail.com</a></div>
+                <div>© <span id="year"></span> Penny Emory Marketing. All Rights Reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library Initialization & JS Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Set Current Year
+        document.getElementById('year').innerText = new Date().getFullYear();
+
+        // Initialize Animate On Scroll
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+
+        // Preloader Dissolve
+        window.addEventListener('load', function () {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => preloader.style.display = 'none', 600);
+        });
+
+        // Dynamic Navbar Background
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('glass', 'shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+
+        // FAQ Accordion Toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                content.classList.toggle('hidden');
+                icon.classList.toggle('fa-plus');
+                icon.classList.toggle('fa-minus');
+            });
+        });
+    </script>
+</body>
+</html>
